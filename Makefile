@@ -3,14 +3,14 @@ CC = gcc
 LIBFT_DIR = ../LibC
 PRINTF_DIR = ../printf
 
-CFLAGS = -Wall -Wextra -Werror -g3 -Iinclude -I$(LIBFT_DIR)/include
+CFLAGS = -Wall -Wextra -Werror -Iinclude -I$(LIBFT_DIR)/include -g
 CFLAGS += -I$(PRINTF_DIR)/include
 
 LDFLAGS = -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft
 
 NAME = ft_ls
 
-SRCS = $(shell find src/ -name "*.c")
+SRCS = $(shell find src -name "*.c")
 
 OBJS = $(SRCS:.c=.o)
 
