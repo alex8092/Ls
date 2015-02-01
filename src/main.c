@@ -37,20 +37,11 @@ static void		f_process_no_arg(void)
 	ft_file_del(f);
 }
 
-static int		f_cmp(void *ptr, void *ptr2)
-{
-	const t_file	*f1 = (t_file *)ptr;
-	const t_file	*f2 = (t_file *)ptr2;
-
-	return (-ft_strcmp(f1->path, f2->path));
-}
-
 static void		f_process_args(void)
 {
 	t_vector	*files;
 	size_t		nprint;
 
-	(void)f_cmp;
 	ft_sort(ft_ls()->args, &ft_strcmp);
 	files = ft_get_files_args();
 	nprint = ft_print_files(files);
